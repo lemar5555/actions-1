@@ -11,5 +11,7 @@ jobs:
             - name: List repo files
               run: ls -ltra
             - name: Execute shell script
-              run: ./ascii-script.sh
+              run: |
+                sudo chmod +x ./ascii-script.sh
+                ./ascii-script.sh
 
