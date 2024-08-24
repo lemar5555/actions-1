@@ -1,19 +1,20 @@
-name: First example
+name: Generate ASCII Artwork
 
 on: push
 
 jobs:
-    first_job:
+    ascii_job:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
               uses: actions/checkout@v4
-            - name: Welcome message
-              run: |
-                echo "Hello"
-                ls -ltra
-                cat README.md
             - name: Install Cowsay
               run: sudo apt update && sudo apt install -y cowsay
             - name: Generate ASCII Artwork
               run: cowsay -f dragon "Run for cover, I am a DRAGON...RAWR" >> dragon.txt
+            - name: Test file exists
+              run: grep -i "dragon" dragon.txt
+            - name: Read the file
+              run: cat dragon.txt
+            - name: List repo files
+              run: ls -ltra
