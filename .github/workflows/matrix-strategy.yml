@@ -2,7 +2,7 @@ name: Matrix Strategy
 
 on:
   push:
-  workflow-dispatch:
+  workflow_dispatch:
 
 jobs:
   deploy:
